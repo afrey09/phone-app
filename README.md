@@ -16,6 +16,10 @@ Author: Adrienne Frey
     All of your core “features” should be working properly
     Un-Styled is fine. We’re looking for things to buzz, light up, detect movement, etc.
   
+### User Stories
+
+As a user, I would like to be able to view my calendar and add new calendar events.
+
 ### How to initialize/run application
 
     npx expo start
