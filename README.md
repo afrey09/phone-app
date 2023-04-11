@@ -24,5 +24,7 @@ Author: Adrienne Frey
 
 ### UML
 
+![UML](./assets/uml.png)
+
 ### Collaborators
 
