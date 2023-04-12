@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, Button, Platform } from 'react-native';
+import { NativeBaseProvider, Box } from 'native-base';
+import { StyleSheet, Button, Platform } from 'react-native';
 import * as Calendar from 'expo-calendar';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const config ={
+  'linear-gradient': LinearGradient
+}
+
 
 export default function App() {
   useEffect(() => {
@@ -14,13 +21,34 @@ export default function App() {
       }
     })();
   }, []);
-  
+
   return (
-    <View style={styles.container}>
-      <Text>Calendar Module Example</Text>
+    <NativeBaseProvider config={config}>
+      <Box safeArea
+        bg={{
+          linearGradient: {
+            colors: ['blue.500', 'blue.300'],
+            start: [1, 0],
+            end: [1, 0],
+          }
+        }}
+      >Calendar
+      <Box 
+        bg={'tertiary.700'}
+        p="5"
+        rounded="xl"
+        _text={{
+          fontsize: 'md',
+          fontWeight: 'xl',
+          color:'warmGray.50',
+          textAlign: 'center'
+        }}
+        >
       <Button title="Create a new calendar" onPress={createCalendar} />
+        </Box>
       <StatusBar style="auto" />
-    </View>
+      </Box>
+    </NativeBaseProvider>
   );
 }
 
@@ -45,7 +73,7 @@ async function createCalendar() {
     accessLevel: Calendar.CalendarAccessLevel.OWNER,
   });
   console.log(`Your new calendar ID is: ${newCalendarID}`);
- 
+
 }
 
 
