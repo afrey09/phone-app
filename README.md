@@ -30,6 +30,10 @@ Author: Adrienne Frey
     Well thought through UX
     Be considerate of individuals that primarily use their thumbs, left or right hands
   
+### User Stories
+
+As a user, I would like to be able to view my calendar and add new calendar events.
+
 ### How to initialize/run application
 
     1. Clone down the repo to local machine 
