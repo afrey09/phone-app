@@ -3,6 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import { NativeBaseProvider, Box } from 'native-base';
 import { StyleSheet, Button, Platform } from 'react-native';
 import * as Calendar from 'expo-calendar';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const config ={
+  'linear-gradient': LinearGradient
+}
+
 
 export default function App() {
   useEffect(() => {
@@ -17,19 +23,18 @@ export default function App() {
   }, []);
 
   return (
-    <NativeBaseProvider>
-      <Box safe area
+    <NativeBaseProvider config={config}>
+      <Box safeArea
         bg={{
           linearGradient: {
             colors: ['blue.500', 'blue.300'],
             start: [1, 0],
-            end: [0.5, 0],
+            end: [1, 0],
           }
         }}
       >Calendar
-      </Box>
       <Box 
-        bg={'primary.500'}
+        bg={'tertiary.700'}
         p="5"
         rounded="xl"
         _text={{
@@ -42,6 +47,7 @@ export default function App() {
       <Button title="Create a new calendar" onPress={createCalendar} />
         </Box>
       <StatusBar style="auto" />
+      </Box>
     </NativeBaseProvider>
   );
 }

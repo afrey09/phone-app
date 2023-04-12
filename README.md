@@ -32,13 +32,18 @@ Author: Adrienne Frey
   
 ### How to initialize/run application
 
-    npx expo start
+    1. Clone down the repo to local machine 
+    2. Create an account at https://expo.io
+    3. Install proper dependencies
+    4. Run npx expo start --tunnel
+    5. Scan QR code with phone camera
 
-### Deployment - Link
+    
+    npx expo start --tunnel
 
 ### UML
 
 ![UML](./assets/uml.png)
 
-### Collaborators
+
 
